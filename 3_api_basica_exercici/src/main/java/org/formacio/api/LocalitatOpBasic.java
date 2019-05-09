@@ -13,7 +13,6 @@ import javax.transaction.Transactional;
  * operacions de persistencia tal com indiquen les firmes dels metodes
  */
 
-
 @Component
 public class LocalitatOpBasic {
 
@@ -45,10 +44,14 @@ public class LocalitatOpBasic {
     @Transactional
     public void elimina(long id) {
         Localitat localitat = getEntityManager().find(Localitat.class, id);
-        getEntityManager().remove(localitat);
+        if (localitat != null) {
+            getEntityManager().remove(localitat);
+        }
     }
 
+    @Transactional
     public void modifica(Localitat localitat) {
+        getEntityManager().merge(localitat);
     }
 
 }

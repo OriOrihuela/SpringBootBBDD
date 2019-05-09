@@ -1,9 +1,7 @@
 package org.formacio.api;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 /**
  * Introduiu, sense canviar el codi ja existent, les annotacions de mapping necessaries
@@ -11,12 +9,14 @@ import javax.persistence.Table;
  * esta definida a:
  * src/main/resources/schema.sql
  */
+
 @Entity
 @Table(name = "T_LOCALITATS")
 public class Localitat {
 
     /* ---- Properties ---- */
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "LOC_ID")
     private Long id;
 
