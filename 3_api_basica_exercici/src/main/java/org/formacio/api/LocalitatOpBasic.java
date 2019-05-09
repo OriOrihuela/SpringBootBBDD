@@ -43,7 +43,7 @@ public class LocalitatOpBasic {
 
     @Transactional
     public void elimina(long id) {
-        Localitat localitat = getEntityManager().find(Localitat.class, id);
+        Localitat localitat = carrega(id);
         if (localitat != null) {
             getEntityManager().remove(localitat);
         }
