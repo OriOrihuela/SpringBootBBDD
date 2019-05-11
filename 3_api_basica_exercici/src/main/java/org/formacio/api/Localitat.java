@@ -16,7 +16,7 @@ public class Localitat {
 
     /* ---- Properties ---- */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "LOC_ID")
     private Long id;
 
