@@ -82,6 +82,9 @@ public class LlibreOpsBasic {
      * (Aquest metode no llanca excepcions!)
      */
     public boolean existeix(String isbn) {
+        if (getEntityManager().find(Llibre.class, isbn) != null) {
+            return true;
+        }
         return false;
     }
 
