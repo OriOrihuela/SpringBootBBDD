@@ -31,7 +31,11 @@ public class LlibreOpsBasic {
      */
     public Llibre carrega(String isbn) throws LlibreNoExisteixException {
         Llibre llibre = getEntityManager().find(Llibre.class, isbn);
-        return llibre;
+        if (llibre != null) {
+            return llibre;
+        } else {
+            throw new LlibreNoExisteixException();
+        }
     }
 
     /**
