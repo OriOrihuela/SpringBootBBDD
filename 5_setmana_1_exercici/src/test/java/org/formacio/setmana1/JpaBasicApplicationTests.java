@@ -85,7 +85,8 @@ public class JpaBasicApplicationTests {
 
 	@Test
 	public void test_alta() {
-		operacions.alta("4444", "Joan Xarequet", 1000, Recomanacio.PRESCINDIBLE, "Aplicacions sense Boot");
+		operacions.alta("4444", "Joan Xarequet", 1000, Recomanacio.PRESCINDIBLE,
+				"Aplicacions sense Boot");
 		Llibre nou = em.find(Llibre.class, "4444");
 		Assert.assertNotNull(nou);
 		Assert.assertEquals(1000, nou.getPagines().intValue());
