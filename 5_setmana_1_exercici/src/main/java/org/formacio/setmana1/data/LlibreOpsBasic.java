@@ -41,7 +41,15 @@ public class LlibreOpsBasic {
     /**
      * Sense sorpreses: dona d'alta un nou llibre amb les propietats especificaques
      */
+    @Transactional
     public void alta(String isbn, String autor, Integer pagines, Recomanacio recomanacio, String titol) {
+        Llibre llibre = new Llibre();
+        llibre.setIsbn(isbn);
+        llibre.setAutor(autor);
+        llibre.setTitol(titol);
+        llibre.setPagines(pagines);
+        llibre.setRecomanacio(recomanacio);
+        getEntityManager().persist(llibre);
     }
 
     /**
